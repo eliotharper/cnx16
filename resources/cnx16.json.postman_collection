@@ -1,0 +1,122 @@
+{
+	"id": "d4171352-51df-bec1-6994-aa5b635649b3",
+	"name": "Connections 2016",
+	"description": "Fuel REST API methods used in Eliot Harper's session \"Creating Custom Journeys with Journey Builder:\rIntegrating Third Party Events\"",
+	"order": [],
+	"folders": [
+		{
+			"id": "ab66f6d5-b7a5-dffb-4d1b-56cb7a1f75cb",
+			"name": "Authentication",
+			"description": "",
+			"order": [
+				"73ca467c-6589-e50b-b2d0-6466562b36d5"
+			],
+			"owner": "3896"
+		},
+		{
+			"id": "b1845848-f365-da75-a65e-af93d4e8fd19",
+			"name": "Contacts",
+			"description": "",
+			"order": [
+				"0bc25138-aa47-7d06-8b61-4f59401f9ad2",
+				"482547b3-cd61-d7c7-355b-81c72a98011b"
+			],
+			"owner": "3896"
+		},
+		{
+			"id": "5dac755a-9e8a-a3d9-71ae-f770d343b31f",
+			"name": "Interaction",
+			"description": "",
+			"order": [
+				"b7060259-e291-e5f1-3e53-fee156b9c8fe"
+			],
+			"owner": "3896"
+		}
+	],
+	"timestamp": 1462340203664,
+	"owner": "3896",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "0bc25138-aa47-7d06-8b61-4f59401f9ad2",
+			"headers": "Authorization: Bearer {{accessToken}}\nContent-Type: application/json\n",
+			"url": "{{hostEndpoint}}/contacts/v1/contactEvents",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1462706664954,
+			"name": "contactEvents",
+			"description": "",
+			"collectionId": "d4171352-51df-bec1-6994-aa5b635649b3",
+			"responses": [],
+			"rawModeData": "{\n    \"contactKey\": \"M145780\",\n    \"eventDefinitionKey\": \"{{eventDefinitionKey}}\",\n    \"data\": [{\n        \"name\": \"Profile\",\n        \"items\": [{\n            \"values\": [\n            {\n                \"name\": \"occupation\",\n                \"value\": \"Sausage Inspector\"\n            },\n            {\n                \"name\": \"dob\",\n                \"value\": \"1975-01-23\"\n            },\n            {\n                \"name\": \"gender\",\n                \"value\": \"male\"\n            }]\n        }]\n    }]\n}\n\n"
+		},
+		{
+			"id": "482547b3-cd61-d7c7-355b-81c72a98011b",
+			"headers": "Authorization: Bearer {{accessToken}}\nContent-Type: application/json\n",
+			"url": "{{hostEndpoint}}/contacts/v1/contactEvents",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1462704940433,
+			"name": "contactEvents - alternate",
+			"description": "",
+			"collectionId": "d4171352-51df-bec1-6994-aa5b635649b3",
+			"responses": [],
+			"rawModeData": "{\n    \"eventDefinitionKey\": \"{{eventDefinitionKey}}\",\n    \"data\": [{\n        \"name\": \"Profile\",\n        \"items\": [{\n            \"values\": [\n            {\n                \"name\": \"ContactKey\",\n                \"value\": \"M145780\"\n            },\n            {\n                \"name\": \"occupation\",\n                \"value\": \"Sausage Inspector\"\n            },\n            {\n                \"name\": \"dob\",\n                \"value\": \"1975-01-23\"\n            },\n            {\n                \"name\": \"gender\",\n                \"value\": \"male\"\n            }]\n        }]\n    }]\n}"
+		},
+		{
+			"id": "73ca467c-6589-e50b-b2d0-6466562b36d5",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{authEndpoint}}/v1/requestToken",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "\nvar data = JSON.parse(responseBody);\n\nif (data.accessToken) {\n  tests[\"Body has accessToken\"] = true; \n  postman.setEnvironmentVariable(\"accessToken\", data.accessToken);\n}\nelse {\n  tests[\"Body has accessToken\"] = false;\n}",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1462889420979,
+			"name": "RequestToken",
+			"description": "Replace `clientId` and `clientSecret` values with app credentials provided in App Center.",
+			"collectionId": "d4171352-51df-bec1-6994-aa5b635649b3",
+			"responses": [],
+			"rawModeData": "{\n   \"clientId\":\"{{clientId}}\",\n   \"clientSecret\":\"{{clientSecret}}\"\n}"
+		},
+		{
+			"id": "b7060259-e291-e5f1-3e53-fee156b9c8fe",
+			"headers": "Authorization: Bearer {{accessToken}}\nContent-Type: application/json\n",
+			"url": "{{hostEndpoint}}/interaction/v1/events",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1462889240265,
+			"name": "events",
+			"description": "Fires the Entry Event that initiates a Contact to enter an Interaction. [Refer to documentation](https://code.exacttarget.com/apis-sdks/rest-api/v1/interaction/postEvent.html).",
+			"collectionId": "d4171352-51df-bec1-6994-aa5b635649b3",
+			"responses": [],
+			"rawModeData": "{\n   \"contactKey\":\"M145780\",\n   \"eventDefinitionKey\":\"{{eventDefinitionKey}}\",\n   \"EstablishContactKey\": true,\n   \"data\":{\n       \"memberId\":\"M145780\",\n       \"firstName\":\"Simon\",\n       \"lastName\":\"Sausage\",\n       \"email\":\"simon@sausage.com\"\n   }\n}"
+		}
+	]
+}
