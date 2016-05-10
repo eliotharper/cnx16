@@ -10,7 +10,7 @@ A video recording of the session will be available for download shortly. Please 
 
 ## Postman Collection
 
-[Download the Postman collection](resources/cnx16.json.postman_collection?raw=true) that includes the Fuel REST API methods used in this session.
+Right-click on [this link](resources/cnx16.json.postman_collection?raw=true) and click 'Save Link As...' to download the Postman collection that includes the Fuel REST API methods used in this session.
 
 Download Postman from [getpostman.com](http://getpostman.com).
 
