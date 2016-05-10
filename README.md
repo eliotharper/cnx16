@@ -2,7 +2,7 @@
 
 ## Presentation
 
-[Download my presentation](resources/journey-builder-3rd-party-events-public.pptx) 'Creating Custom Journeys with Journey Builder: Integrating Third Party Events' delivered at Salesforce Connections 2016 conference. 
+[Download my presentation](resources/journey-builder-3rd-party-events-public.pptx?raw=true) 'Creating Custom Journeys with Journey Builder: Integrating Third Party Events' delivered at Salesforce Connections 2016 conference. 
 
 ## Video
 
@@ -10,7 +10,7 @@ A video recording of the session will be available for download shortly. Please 
 
 ## Postman Collection
 
-[Download the Postman collection](resources/cnx16.json.postman_collection) that includes the Fuel REST API methods used in this session.
+[Download the Postman collection](resources/cnx16.json.postman_collection?raw=true) that includes the Fuel REST API methods used in this session.
 
 Download Postman from [getpostman.com](http://getpostman.com).
 
